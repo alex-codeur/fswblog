@@ -24,12 +24,12 @@
                                 </thead>
                                 <tbody>
                                     <tr v-for="(category, index) in getAllCategory" :key="category.id">
-                                        <td>{{index}}</td>
+                                        <td>{{index+1}}</td>
                                         <td>{{ category.cat_name }}</td>
                                         <td>{{ category.created_at | timeformat }}</td>
                                         <td>
                                             <a href="">Edit</a>
-                                            <a href="">Delete</a>
+                                            <a href="" @click.prevent="deleteCategory(category.id)">Delete</a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -54,7 +54,20 @@
             }
         },
         methods: {
+            deleteCategory(id) {
+                axios.delete('/category/' + id)
+                    .then(() => {
+                        this.$store.dispatch("allCategory")
 
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'Category Deleted successfully'
+                        })
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
+            }
         }
     }
 </script>

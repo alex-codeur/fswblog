@@ -1979,7 +1979,22 @@ __webpack_require__.r(__webpack_exports__);
       return this.$store.getters.getCategory;
     }
   },
-  methods: {}
+  methods: {
+    deleteCategory: function deleteCategory(id) {
+      var _this = this;
+
+      axios["delete"]('/category/' + id).then(function () {
+        _this.$store.dispatch("allCategory");
+
+        Toast.fire({
+          icon: 'success',
+          title: 'Category Deleted successfully'
+        });
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -2035,7 +2050,7 @@ __webpack_require__.r(__webpack_exports__);
 
         Toast.fire({
           icon: 'success',
-          title: 'Category added successfully'
+          title: 'Category Added successfully'
         });
       })["catch"](function (error) {
         console.log(error);
@@ -59225,7 +59240,7 @@ var render = function() {
                     "tbody",
                     _vm._l(_vm.getAllCategory, function(category, index) {
                       return _c("tr", { key: category.id }, [
-                        _c("td", [_vm._v(_vm._s(index))]),
+                        _c("td", [_vm._v(_vm._s(index + 1))]),
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(category.cat_name))]),
                         _vm._v(" "),
@@ -59235,7 +59250,23 @@ var render = function() {
                           )
                         ]),
                         _vm._v(" "),
-                        _vm._m(1, true)
+                        _c("td", [
+                          _c("a", { attrs: { href: "" } }, [_vm._v("Edit")]),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "" },
+                              on: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.deleteCategory(category.id)
+                                }
+                              }
+                            },
+                            [_vm._v("Delete")]
+                          )
+                        ])
                       ])
                     }),
                     0
@@ -59264,16 +59295,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Actions")])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("a", { attrs: { href: "" } }, [_vm._v("Edit")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "" } }, [_vm._v("Delete")])
     ])
   }
 ]

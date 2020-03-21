@@ -40,7 +40,7 @@
 
                         Toast.fire({
                             icon: 'success',
-                            title: 'Category added successfully'
+                            title: 'Category Added successfully'
                         })
                     })
                     .catch((error) => {

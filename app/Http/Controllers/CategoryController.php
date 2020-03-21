@@ -29,4 +29,12 @@ class CategoryController extends Controller
 
         return ['message' => 'OK'];
     }
+
+    public function delete_category($id)
+    {
+        $category = Category::find($id);
+        $category->delete();
+
+        return ['message' => 'OK'];
+    }
 }
