@@ -8,6 +8,15 @@ use App\Category;
 
 class CategoryController extends Controller
 {
+    public function all_category()
+    {
+        $categories = Category::all();
+
+        return response()->json([
+            'categories' => $categories
+        ], 200);
+    }
+
     public function add_category(REquest $request)
     {
         $this->validate($request, [

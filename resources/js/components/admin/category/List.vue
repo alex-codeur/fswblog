@@ -17,14 +17,14 @@
                                 <thead>
                                     <tr>
                                         <th>s1</th>
-                                        <th>Category Name</th>
+                                        <th>Name</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Category Name</td>
+                                    <tr v-for="(category, index) in getAllCategory" :key="category.id">
+                                        <td>{{index}}</td>
+                                        <td>{{ category.cat_name }}</td>
                                         <td>
                                             <a href="">Edit</a>
                                             <a href="">Delete</a>
@@ -42,7 +42,18 @@
 
 <script>
     export default {
-        name: 'List'
+        name: 'List',
+        mounted() {
+            this.$store.dispatch("allCategory")
+        },
+        computed: {
+            getAllCategory() {
+                return this.$store.getters.getCategory
+            }
+        },
+        methods: {
+
+        }
     }
 </script>
 
