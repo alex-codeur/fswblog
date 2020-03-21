@@ -155,30 +155,30 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <router-link to="/home" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
                 <i class="right fas fa-angle-left"></i>
               </p>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <router-link to="category-list" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Category
               </p>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <router-link to="/post" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Post
                 <span class="right badge badge-danger">New</span>
               </p>
-            </a>
+            </router-link>
           </li>
         </ul>
       </nav>
@@ -193,35 +193,14 @@
     
 
     <!-- Main content -->
-    <section class="content">
-
-      <!-- Default box -->
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Title</h3>
-
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-              <i class="fas fa-minus"></i></button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fas fa-times"></i></button>
-          </div>
-        </div>
-        <div class="card-body">
-          Start creating your amazing application!
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-          Footer
-        </div>
-        <!-- /.card-footer-->
-      </div>
-      <!-- /.card -->
-
-    </section>
+    <!-- <home></home> -->
+    <!-- <admin-main></admin-main> -->
+    <router-view></router-view>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
+    <!-- <example-component></example-component> -->
 
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
@@ -241,6 +220,6 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link href="{{ asset('js/app.js') }}" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
