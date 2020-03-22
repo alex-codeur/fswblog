@@ -2,7 +2,7 @@
     <div>
         <section class="content">
             <div class="row justify-content-center">
-                <div class="col-10">
+                <div class="col-12">
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Post List</h3>
@@ -26,13 +26,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
+                                    <tr v-for="(post, index) in allpost">
+                                        <td>{{index+1}}</td>
                                         <td>User Name</td>
                                         <td>Category Name</td>
-                                        <td>Post Title</td>
-                                        <td>Post Description</td>
-                                        <td>Photo</td>
+                                        <td>{{ post.title }}</td>
+                                        <td>{{ post.description }}</td>
+                                        <td><img :src="post.photo" width="40" height="50"></td>
                                         <td>
                                             <a href="">Edit</a>
                                             <a href="">Delete</a>
@@ -50,7 +50,18 @@
 
 <script>
 export default {
-    name: "List"
+    name: "List",
+    mounted() {
+        this.$store.dispatch('getAllPost')
+    },
+    computed: {
+        allpost() {
+            return this.$store.getters.getAllPost
+        }
+    },
+    methods: {
+
+    }
 }
 </script>
 
