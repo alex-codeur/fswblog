@@ -30,3 +30,4 @@ Route::delete('/category/{id}', 'CategoryController@delete_category');
 
 // Post
 Route::get('/post', 'PostController@all_post');
+Route::post('/savepost', 'PostController@save_post');

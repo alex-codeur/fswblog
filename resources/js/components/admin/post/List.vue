@@ -8,7 +8,7 @@
                             <h3 class="card-title">Post List</h3>
                             <div class="card-tools">
                                 <button class="btn btn-primary">
-                                    <router-link to="/" style="color: #ffffff">Add Post</router-link>
+                                    <router-link to="/add-post" style="color: #ffffff">Add Post</router-link>
                                 </button>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                                         <td v-if="post.category">{{post.category.cat_name}}</td>
                                         <td>{{ post.title | sortlength(20, '---') }}</td>
                                         <td>{{ post.description | sortlength(40, '...') }}</td>
-                                        <td><img :src="post.photo" width="40" height="50"></td>
+                                        <td><img :src="ourImage(post.photo)" width="40" height="50"></td>
                                         <td>
                                             <a href="">Edit</a>
                                             <a href="">Delete</a>
@@ -60,7 +60,9 @@ export default {
         }
     },
     methods: {
-
+        ourImage(img) {
+            return "uploadImage/" + img;
+        }
     }
 }
 </script>
