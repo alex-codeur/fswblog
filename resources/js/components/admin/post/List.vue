@@ -34,7 +34,7 @@
                                         <td>{{ post.description | sortlength(40, '...') }}</td>
                                         <td><img :src="ourImage(post.photo)" width="40" height="50"></td>
                                         <td>
-                                            <a href="">Edit</a>
+                                            <router-link :to="`/edit-post/${post.id}`">Edit</router-link>
                                             <a href="" @click.prevent="deletePost(post.id)">Delete</a>
                                         </td>
                                     </tr>
