@@ -26,7 +26,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="(post, index) in allpost">
+                                    <tr v-for="(post, index) in allpost" :key="post.id">
                                         <td>{{index+1}}</td>
                                         <td v-if="post.user">{{post.user.name}}</td>
                                         <td v-if="post.category">{{post.category.cat_name}}</td>
@@ -35,7 +35,7 @@
                                         <td><img :src="ourImage(post.photo)" width="40" height="50"></td>
                                         <td>
                                             <a href="">Edit</a>
-                                            <a href="">Delete</a>
+                                            <a href="" @click.prevent="deletePost(post.id)">Delete</a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -62,6 +62,20 @@ export default {
     methods: {
         ourImage(img) {
             return "uploadImage/" + img;
+        },
+        deletePost(id) {
+            axios.delete('/delete/' + id)
+                .then(() => {
+                    this.$store.dispatch("getAllPost")
+
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Post Deleted successfully'
+                    })
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
         }
     }
 }
