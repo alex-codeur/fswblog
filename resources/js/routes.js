@@ -10,6 +10,10 @@ import PostList from './components/admin/post/List.vue'
 import AddPost from './components/admin/post/New.vue'
 import EditPost from './components/admin/post/Edit.vue'
 
+// Frontend Component
+import PublicHome from './components/public/PublicHome.vue'
+import SinglePost from './components/public/SinglePost.vue'
+
 export const routes = [
     {
         path:'/home',
@@ -42,5 +46,20 @@ export const routes = [
     {
         path: '/edit-post/:postId',
         component: EditPost
+    },
+
+    // Frontend Route
+    {
+        path: '/',
+        component: PublicHome
+    },
+     {
+        path: '/blog/:id',
+        component: SinglePost
+    },
+    {
+        path: '/categories/:id',
+        component: PublicHome
     }
+
 ];

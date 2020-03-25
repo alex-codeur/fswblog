@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('public.index');
 });
 
 Auth::routes();
@@ -36,3 +36,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::delete('/delete/{id}', 'PostController@delete_post');
 });
 
+Route::get('/blogpost', 'BlogController@get_all_blog_post');
+Route::get('/singlepost/{id}', 'BlogController@getpost_by_id');
+Route::get('/categories', 'BlogController@get_all_category');
+Route::get('/categorypost/{id}', 'BlogController@get_all_post_by_cat_id');
+Route::get('/search', 'BlogController@search_post');
+Route::get('/latestpost', 'BlogController@latest_post');

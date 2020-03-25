@@ -1,7 +1,11 @@
 export default {
     state: {
         category: [],
-        post: []
+        post: [],
+        blogpost: [],
+        singlepost: [],
+        allcategories: [],
+        latestpost: []
     },
     getters: {
         getCategory(state) {
@@ -9,6 +13,18 @@ export default {
         },
         getAllPost(state) {
             return state.post
+        },
+        getBlogPost(state) {
+            return state.blogpost
+        },
+        singlepost(state) {
+            return state.singlepost
+        },
+        allcategories(state) {
+            return state.allcategories
+        },
+        latestpost(state) {
+            return state.latestpost
         }
     },
     actions: {
@@ -29,6 +45,48 @@ export default {
                 .catch((error) => {
                     console.log(error)
                 })
+        },
+        getBlogPost(context) {
+            axios.get('/blogpost')
+                .then((response) => {
+                    context.commit('getBlogPost', response.data.posts)
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        },
+        getPostById(context, payload) {
+            axios.get('/singlepost/' + payload)
+                .then((response) => {
+                    context.commit('singlepost', response.data.post)
+                })
+        },
+        allcategories(context) {
+            axios.get('/categories')
+                .then((response) => {
+                    context.commit('allcategories', response.data.categories)
+                })
+        },
+        getPostByCatId(context, payload) {
+            axios.get('/categorypost/' + payload)
+                .then((res) => {
+                    context.commit('getPostByCatId', res.data.posts)
+                })
+        },
+        SearchPost(context, payload) {
+            axios.get('/search?*=' + payload)
+                .then((response) => {
+                    context.commit('getSearchPost', response.data.posts)
+                })
+        },
+        latestPost(context) {
+            axios.get('/latestpost')
+                .then((response) => {
+                    context.commit('latestpost', response.data.posts)
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
         }
     },
     mutations: {
@@ -37,6 +95,24 @@ export default {
         },
         allpost(state, payload) {
             return state.post = payload
+        },
+        getBlogPost(state, payload) {
+            return state.blogpost = payload
+        },
+        singlepost(state, payload) {
+            return state.singlepost = payload
+        },
+        allcategories(state, payload) {
+            return state.allcategories = payload
+        },
+        getPostByCatId(state, payload) {
+            return state.latestpost = payload
+        },
+        getSearchPost(state, payload) {
+            return state.latestpost = payload
+        },
+        latestpost(state, payload) {
+            return state.latestpost = payload
         }
     }
 }

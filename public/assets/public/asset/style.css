@@ -1,0 +1,564 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #F1F1F1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0;
+    line-height: 1.3;
+}
+
+a {color: inherit}
+
+/* DESIGN DU HEADER */
+
+.container {
+    padding: 0 15px;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.topbar_1 {
+    background: #000;
+}
+
+.topbar_2 {
+    background: #34AAFF;
+}
+
+.header_1 {
+    width: 69%;
+    height: 35px;
+    margin: auto;
+    background: #000;
+}
+
+.color-title {
+    color: #34AAFF;
+}
+
+.header_2 form {
+    position: relative;
+    bottom: 7px;
+    float: right;
+}
+
+.header_2 form .button {
+    position: relative;
+    padding: 3px 7px 4px 7px;
+    top: 1px;
+}
+
+
+input[type="text"] {
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+    border: none;
+    border-radius:  5px 0px 0px 5px;
+}
+
+.site-title {
+    position: relative;
+    top: 6px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header_2 {
+    width: 69%;
+    margin: auto;
+    height: 35px;
+    background: #34AAFF;
+}
+
+.header_2 a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.sign-login {
+ float: left;
+}
+
+.sign-login a {
+    position: relative;
+    top: 10px;
+}
+
+.sign-login a:hover {
+    border: 1px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
+.sign-login em:last-child {
+    position: relative;
+    left: 10px;
+}
+
+.topbar-nav {
+    position: relative;
+    top: 8px;
+    float: right;
+}
+
+.topbar-nav ul {
+    position: relative;
+    bottom: 12px;
+    float: right;
+}
+
+.topbar-nav ul li {
+    display: inline;
+    list-style: none;
+}
+
+.topbar-nav a {
+    color: rgba(255, 255, 255, 0.67);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: bold;
+    transition: color border 'border-radius' padding .3s;
+}
+
+.topbar-nav a:hover,
+.topbar-nav a.active
+{
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* FIN DU HEADER */
+
+/* MAIN */
+
+.container {
+    width: 69%;
+    margin: auto;
+    position: relative;
+    top: 30px;
+}
+
+.liste-articles {
+    float: 	left;
+    width: 70%;
+}
+
+.aside {
+    float: 	right;
+    width: 28%;
+}
+
+.article {
+    margin-bottom: 20px;
+}
+
+.article-img {
+    float: left;
+}
+
+.article-data {
+    position: relative;
+    top: 0;
+    left: 10px;
+}
+
+.article-title {
+    position: relative;
+    top: 0;
+    left:10px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.article-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.article p {
+    position: relative;
+    top: 5px;
+    left: 10px;
+    font-size: 12px;
+    min-height: 10px;
+    margin: 0;
+}
+
+.detail {
+    background: #34AAFF;
+    border-radius: 5px;
+    padding: 2px 8px 2px 8px;
+}
+
+.detail a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.appreciations {
+    position: relative;
+    left: 10px;
+    top: 2px;
+    width: 100%;
+}
+
+.design img {
+    position: relative;
+    top: 6px;
+    left: 5px;
+}
+
+.appreciations span {
+    padding-right: 100px;
+}
+
+.appreciations a .em-comments {
+    position: relative;
+    left: 10px;
+}
+
+.appreciations a {
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    font-size: 10px;
+}
+
+.card-img-detail {
+    width: 100%;
+    height: 150px;
+}
+
+/* FIN DU MAIN */
+
+/* ASIDES */
+
+.aside {
+    margin-bottom: 25px;
+}
+
+.aside-top {
+    background: #34AAFF;
+    border-radius: 10px 10px 0px 0px;
+    color: #fff;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.aside-bottom {
+    background: #fff;
+    padding: 10px;
+    border: none;
+}
+
+.aside-bottom-content {
+    margin-bottom: 15px;
+}
+
+.aside-img {
+    float: left;
+}
+
+.aside-img-original {
+    border-radius: 50%;
+}
+
+.aside-data {
+    position: relative;
+    top: 0;
+    left: 10px;
+    font-size: 12px;
+}
+
+.aside-title {
+    position: relative;
+    top: 0;
+    left:10px;
+    font-size: 12px;
+    margin: 0;
+    color: #000;
+    font-weight: bold;
+}
+
+.aside-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.aside-bottom p {
+    position: relative;
+    top: 0;
+    left:10px;
+    font-size: 12px;
+    margin: 0;
+}
+
+.categorie {
+    background: #fff;
+}
+
+.categorie hr{
+    color: #F1F1F1;
+}
+
+.categorie a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    display: flex;
+    border-bottom: 1px solid #000;
+    padding: 5px;
+}
+
+.categorie a:last-child {
+    border-bottom: none;
+}
+
+.categorie a:hover {
+    background: #F1F1F1;
+}
+
+/* FIN DE L'ASIDE */
+
+/* FOOTER */
+
+.footer {
+    position: relative;
+    top: 150px;
+    clear: both;
+}
+
+.footer-top {
+    color: #fff;
+    height: 330px;
+    padding: 20px;
+    background: #000;
+}
+
+.footer-bottom {
+    height: 80px;
+    background: #34AAFF;
+}
+
+.footer-top-1 {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+}
+
+.footer-top-2 {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+}
+
+.footer-top-2 p {
+    margin-bottom: 5px;
+    color: #34AAFF;
+}
+
+.footer-top-3 {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+}
+
+.footer-top-3 .quote {
+    display: inline;
+    margin-right: 10px;
+}
+
+.footer-top-3 .tweet {
+    display: inline;
+    font-size: 12px;
+}
+
+.footer-top-3 .tweets {
+    margin-bottom: 5px;
+    color: #34AAFF;
+}
+
+.social span {
+    padding: 15px;
+    padding-bottom: 8px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.social p {
+    margin: 15px;
+    margin-left: 0;
+    color: #34AAFF;
+}
+
+.button {
+    border: none;
+    background: #F1F1F1;
+    padding: 5px;
+    border-radius: 0px 5px 5px 0px;
+    text-transform: lowercase;
+}
+
+.me-suivre span {
+    display: flex;
+}
+
+.me-suivre span em {
+    margin-left: 5px;
+}
+
+.me-suivre span a {
+    text-decoration: none
+}
+
+.me-suivre span a img, .footer-top-3 img {
+    background: #fff;
+    padding: 3px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.contact-center {
+    width: 50%;
+    margin: auto;
+}
+
+.copyright {
+    font-size: 20px;
+    width: 50%;
+    margin: auto;
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* FIN DU FOOTER*/
+
+/* PAGINATION */
+
+.pagination {
+    position: relative;
+    width: 50%;
+    margin: auto;
+    top: 40px;
+    left: 100px;
+}
+
+.pagination span {
+    position: relative;
+    top: -8px;
+    margin: 8px;
+}
+
+.pagination span a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.pagination span a:hover, .pagination span a.active {
+    border-radius: 50%;
+    background: #34AAFF;
+    padding: 10px;
+}
+
+/* FIN DE LA PAGINATION */
+
+/* BLOG */
+
+.card {
+    width: 48%;
+    display: inline-block;
+    margin: 2px;
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+}
+
+.card-body p, .card-body h4 {
+    margin: 0;
+}
+
+.card-footer .pseudo {
+    float: left;
+}
+
+.card-footer .time {
+    float: right;
+}
+
+/* FIN DU BLOG */
+
+/* FORUM */
+
+.card-forum {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+}
+
+.card-forum img {
+    width: 80%;
+    height: 80px;
+}
+
+.title-forum h4 {
+    margin: 0;
+}
+
+.title-forum a {
+    text-decoration: none;
+}
+
+/* FIN DU FORUM */
+
+/* BOUTIQUE */
+
+.card-product {
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.title-product h4 {
+    margin: 0;
+}
+
+.title-product a {
+    text-decoration: none;
+}
+
+.card-product img {
+    width: 80%;
+    height: 80px;
+}
+
+.card-product .content-product img {
+    width: 10px;
+    height: 10px;
+    background: yellow;
+}
+
+.card-product .button-card {
+    border: none;
+    background: #34AAFF;
+    padding: 3px;
+    border-radius: 5px;
+    color: #fff;
+}
